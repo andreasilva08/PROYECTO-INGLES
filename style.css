@@ -1,148 +1,148 @@
-:root {
-  --rojo: #8b3a2a;
-  --rojo-cl: #b8563e;
-  --dorado: #c9943a;
-  --dorado-cl: #e8b85a;
-  --oliva: #5c6b44;
-  --oliva-cl: #7d9158;
-  --marfil: #f4ede0;
-  --marfil-os: #e8d9c4;
-  --carbon: #1c1208;
-  --cafe: #3d2010;
-  --gris: #6b5540;
-  --crema: #faf6ee;
+:root {  /* paleta de colores*/
+  --rojo: #8b3a2a; /* color principal */
+  --rojo-cl: #b8563e; /* color principal claro */
+  --dorado: #c9943a; /* color secundario */
+  --dorado-cl: #e8b85a; /* color secundario claro */
+  --oliva: #5c6b44;   /* color terciario */
+  --oliva-cl: #7d9158; /* color terciario claro */
+  --marfil: #f4ede0; /* color de fondo */
+  --marfil-os: #e8d9c4; /* color de fondo oscuro */
+  --carbon: #1c1208; /* color de texto principal */
+  --cafe: #3d2010; /* color de texto secundario */
+  --gris: #6b5540; /* color de texto terciario */
+  --crema: #faf6ee; /* color de fondo claro */
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*, /* reset de box-sizing y márgenes */
+*::before, 
+*::after { 
+  box-sizing: border-box; /* incluye padding y border en el ancho total */
+  margin: 0; /* elimina márgenes por defecto */
+  padding: 0; /* elimina padding por defecto */
 }
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Be Vietnam Pro", sans-serif;
-  background: var(--crema);
-  color: var(--carbon);
-  overflow-x: hidden;
+html {  /* scroll suave para anclas */
+  scroll-behavior: smooth; /* permite que el scroll sea suave al hacer clic en enlaces internos */
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 300;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 0 48px;
-  height: 76px;
-  background: var(--rojo-cl);
-  transition:
-    background 0.4s,
-    backdrop-filter 0.4s;
-}
-nav.solid {
-  background: rgba(28, 18, 8, 0.94);
-  backdrop-filter: blur(12px);
+body { /* estilos generales del body */
+  font-family: "Be Vietnam Pro", sans-serif; /* fuente principal */
+  background: var(--crema); /* color de fondo */
+  color: var(--carbon); /* color de texto */
+  overflow-x: hidden; /* evita scroll horizontal */
 }
 
-.nav-left,
-.nav-right {
-  display: flex;
-  gap: 32px;
-  align-items: center;
+nav { /* estilos del menú de navegación */
+  position: fixed; /* mantiene el menú fijo en la parte superior */
+  top: 0; /* posición en la parte superior */
+  left: 0; /* posición en la parte izquierda */
+  right: 0; /* posición en la parte derecha */
+  z-index: 300; /* asegura que el menú esté por encima de otros elementos */
+  display: grid; /* utiliza grid layout para organizar los elementos del menú */
+  grid-template-columns: 1fr auto 1fr; /* tres columnas: izquierda, centro y derecha */
+  align-items: center; /* centra verticalmente los elementos del menú */ 
+  padding: 0 48px; /* padding horizontal de 48px */
+  height: 76px; /* altura del menú */
+  background: var(--rojo-cl); /* color de fondo del menú */
+  transition: /* transiciones suaves para cambios de fondo y filtro */
+    background 0.4s, /* transición de fondo */
+    backdrop-filter 0.4s; /* transición de filtro de fondo */
 }
-.nav-right {
-  justify-content: flex-end;
+nav.solid { /* clase para cuando el menú tiene fondo sólido */
+  background: rgba(28, 18, 8, 0.94); /* color de fondo sólido */
+  backdrop-filter: blur(12px); /* aplica un desenfoque al fondo */
 }
 
-nav a.nl {
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
-  transition: color 0.25s;
+.nav-left, /* estilos para la sección izquierda del menú */
+.nav-right { /* estilos para la sección derecha del menú */
+  display: flex; /* utiliza flexbox para organizar los elementos */
+  gap: 32px; /* espacio entre los elementos */
+  align-items: center; /* centra verticalmente los elementos */
 }
-nav a.nl:hover {
-  color: var(--dorado-cl);
+.nav-right { /* estilos específicos para la sección derecha del menú */
+  justify-content: flex-end; /* alinea los elementos a la derecha */
+}
+
+nav a.nl { /* estilos para los enlaces del menú */
+  text-decoration: none; /* elimina subrayado de los enlaces */
+  font-size: 0.75rem; /* tamaño de fuente */
+  font-weight: 600; /* grosor de fuente */
+  letter-spacing: 0.14em; /* espacio entre letras */
+  text-transform: uppercase; /* transforma el texto a mayúsculas */
+  color: rgba(255, 255, 255, 0.65); /* color de texto con opacidad */
+  transition: color 0.25s; /* transición suave para el cambio de color */
+} 
+nav a.nl:hover { /* estilos para los enlaces del menú al pasar el mouse */
+  color: var(--dorado-cl); /* cambia el color al pasar el mouse */
 }
 
 .nav-logo {
-  text-align: center;
-  text-decoration: none;
+  text-align: center; /* centra el logo en la sección del menú */
+  text-decoration: none; /* elimina subrayado del logo */
 }
-.nav-logo .logo-main {
-  font-family: "Fraunces", serif;
-  font-size: 1.45rem;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: 0.04em;
-  display: block;
-  line-height: 1;
-}
-.nav-logo .logo-sub {
-  font-size: 0.6rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--dorado-cl);
-  display: block;
-  margin-top: 2px;
-}
-
-.nav-reach {
-  background: var(--rojo);
-  color: #fff !important;
-  padding: 9px 22px;
-  border-radius: 2px;
-  letter-spacing: 0.1em;
-  transition: background 0.25s !important;
-}
-.nav-reservar:hover {
-  background: var(--rojo-cl) !important;
+.nav-logo .logo-main { /* estilos para el texto principal del logo */
+  font-family: "Fraunces", serif; /* fuente del logo */
+  font-size: 1.45rem; /* tamaño de fuente del logo */
+  font-weight: 900; /* grosor de fuente del logo */ 
+  color: #fff; /* color de texto del logo */
+  letter-spacing: 0.04em; /* espacio entre letras del logo */
+  display: block; /* hace que el logo sea un bloque */
+  line-height: 1; /* altura de línea del logo */
+} 
+.nav-logo .logo-sub { /* estilos para el texto secundario del logo */
+  font-size: 0.6rem; /* tamaño de fuente del texto secundario del logo */
+  letter-spacing: 0.26em; /* espacio entre letras del texto secundario del logo */
+  text-transform: uppercase; /* transforma el texto a mayúsculas */
+  color: var(--dorado-cl); /* color de texto del texto secundario del logo */
+  display: block; /* hace que el texto secundario del logo sea un bloque */
+  margin-top: 2px; /* margen superior del texto secundario del logo */
 }
 
-#hero {
-  height: 100vh;
-  min-height: 680px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
+.nav-reach { /* estilos para el botón de contacto del menú */
+  background: var(--rojo); /* color de fondo del botón */
+  color: #fff !important; /* color de texto del botón */
+  padding: 9px 22px; /* padding interno del botón */
+  border-radius: 2px; /* radio de borde del botón */
+  letter-spacing: 0.1em; /* espacio entre letras del botón */
+  transition: background 0.25s !important; /* transición suave para el cambio de fondo del botón */
+}
+.nav-reservar:hover { /* estilos para el botón de contacto del menú al pasar el mouse */
+  background: var(--rojo-cl) !important; /* cambia el color de fondo al pasar el mouse */
 }
 
-.hero-foto {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  inset: 0;
-  background-image: url(./img/image.png) center center / cover no-repeat;
-  transform: scale(1.04);
-  animation: drift 22s ease-in-out infinite alternate;
-  overflow: hidden;
+#hero { /* sección de hero principal */
+  height: 100vh; /* altura completa de la ventana */
+  min-height: 680px; /* altura mínima de la sección hero */
+  position: relative; /* posición relativa para contener elementos posicionados absolutamente */
+  display: flex; /* utiliza flexbox para organizar los elementos */
+  flex-direction: column; /* organiza los elementos en columna */
+  justify-content: flex-end; /* alinea los elementos al final de la sección */
+  overflow: hidden; /* oculta cualquier contenido que se desborde de la sección */
 }
 
-@keyframes drift {
-  from {
-    transform: scale(1.04) translate(0, 0);
+.hero-foto { /* imagen de fondo del hero */
+  height: 100vh; /* altura completa de la ventana */
+  width: 100vw; /* ancho completo de la ventana */
+  position: absolute; /* posición absoluta para cubrir toda la sección hero */
+  inset: 0; /* posiciona la imagen en todos los lados de la sección hero */
+  background-image: url(./img/image.png) center center / cover no-repeat; /* imagen de fondo centrada y cubierta */
+  transform: scale(1.04); /* escala inicial de la imagen */
+  animation: drift 22s ease-in-out infinite alternate; /* animación de deriva de la imagen */
+  overflow: hidden; /* oculta cualquier contenido que se desborde de la imagen */
+} 
+
+@keyframes drift { /* Animación de deriva para el fondo del hero */
+  from { /* Estado inicial */
+    transform: scale(1.04) translate(0, 0); /* Escala y posición inicial */
+  } 
+  to { /* Estado final */
+    transform: scale(1.1) translate(-2%, -1%); /* Ligero zoom y desplazamiento */
   }
-  to {
-    transform: scale(1.1) translate(-2%, -1%);
-  }
 }
 
-.hero-tint {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
+.hero-tint { /* Capa de superposición para oscurecer la imagen */
+  position: absolute; /* Coordenadas absolutas */
+  inset: 0; /* Ocupa todo el espacio disponible */
+  background: linear-gradient( /* Degradado para legibilidad del texto */
     to top,
     rgba(28, 18, 8, 0.96) 0%,
     rgba(28, 18, 8, 0.55) 45%,
@@ -150,1156 +150,1285 @@ nav a.nl:hover {
   );
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 0 64px 72px;
+.hero-content { /* Contenedor principal de texto del hero */
+  position: relative; /* Sobrepone respecto a la capa oscura */
+  z-index: 2; /* Prioridad de capa frontal */
+  padding: 0 64px 72px; /* Margen interno (lados y fondo) */
 }
 
-.hero-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--dorado-cl);
-  margin-bottom: 18px;
+.hero-label { /* Etiqueta o subtítulo superior */
+  display: inline-flex; /* Alineación horizontal flex */
+  align-items: center; /* Centrado vertical */
+  gap: 10px; /* Espacio con las líneas laterales */
+  font-size: 0.7rem; /* Tamaño de fuente pequeño */
+  font-weight: 600; /* Grosor semi-negrita */
+  letter-spacing: 0.22em; /* Espaciado amplio entre letras */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  color: var(--dorado-cl); /* Color dorado claro */
+  margin-bottom: 18px; /* Espacio inferior */
 }
+
 .hero-label::before,
-.hero-label::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--dorado);
-  width: 28px;
+.hero-label::after { /* Líneas decorativas a los lados de la etiqueta */
+  content: ""; /* Elemento gráfico vacío */
+  flex: 1; /* Crecimiento flexible */
+  height: 1px; /* Grosor de la línea */
+  background: var(--dorado); /* Color dorado principal */
+  width: 28px; /* Ancho fijo de las líneas */
 }
 
-.hero-h1 {
-  font-family: "Fraunces", serif;
-  font-weight: 900;
-  font-size: clamp(4.5rem, 11vw, 10.5rem);
-  color: #fff;
-  line-height: 0.88;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-}
-.hero-h1 .line2 {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--dorado-cl);
-  display: block;
-  padding-left: 160px;
-}
-.hero-h1 .line3 {
-  display: block;
+.hero-h1 { /* Título principal */
+  font-family: "Fraunces", serif; /* Fuente tipográfica serif */
+  font-weight: 900; /* Peso extra negrita */
+  font-size: clamp(4.5rem, 11vw, 10.5rem); /* Tamaños adaptables según pantalla */
+  color: #fff; /* Texto blanco */
+  line-height: 0.88; /* Interlineado muy cerrado */
+  letter-spacing: -0.02em; /* Compresión entre letras */
+  margin-bottom: 8px; /* Espacio inferior */
 }
 
-.hero-bottom {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-top: 40px;
-  flex-wrap: wrap;
-  gap: 28px;
+.hero-h1 .line2 { /* Segunda línea del título principal */
+  font-style: italic; /* Texto en cursiva */
+  font-weight: 300; /* Peso de fuente ligero */
+  color: var(--dorado-cl); /* Color dorado claro */
+  display: block; /* Muestra en su propia línea */
+  padding-left: 160px; /* Sangría a la izquierda */
 }
-.hero-desc {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.8;
-  max-width: 380px;
-  font-weight: 300;
+
+.hero-h1 .line3 { /* Tercera línea del título principal */
+  display: block; /* Muestra en su propia línea */
 }
-.hero-ctas {
-  display: flex;
-  gap: 14px;
-  align-items: center;
+
+.hero-bottom { /* Sección inferior con descripción y botones */
+  display: flex; /* Distribución flexible */
+  align-items: flex-end; /* Alineación al borde inferior */
+  justify-content: space-between; /* Separación a los extremos */
+  margin-top: 40px; /* Margen superior */
+  flex-wrap: wrap; /* Envoltura para pantallas pequeñas */
+  gap: 28px; /* Espaciado entre elementos */
 }
-.h-btn-p {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--dorado);
-  color: var(--carbon);
-  text-decoration: none;
-  padding: 16px 36px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition:
+
+.hero-desc { /* Texto descriptivo */
+  font-size: 1rem; /* Tamaño de texto estándar */
+  color: rgba(255, 255, 255, 0.65); /* Blanco translúcido */
+  line-height: 1.8; /* Interlineado amplio para lectura */
+  max-width: 380px; /* Ancho máximo permitido */
+  font-weight: 300; /* Grosor ligero */
+}
+
+.hero-ctas { /* Agrupador de botones de acción */
+  display: flex; /* Distribución horizontal */
+  gap: 14px; /* Espacio entre botones */
+  align-items: center; /* Centrado vertical */
+}
+
+.h-btn-p { /* Botón principal (CTA) */
+  display: inline-flex; /* Alineación interna en línea */
+  align-items: center; /* Centrado de contenido */
+  gap: 10px; /* Espacio con posibles iconos */
+  background: var(--dorado); /* Fondo dorado */
+  color: var(--carbon); /* Texto oscuro */
+  text-decoration: none; /* Sin subrayado de enlace */
+  padding: 16px 36px; /* Relleno interior */
+  font-weight: 700; /* Texto en negrita */
+  font-size: 0.8rem; /* Tamaño de fuente */
+  letter-spacing: 0.12em; /* Espaciado de letras */
+  text-transform: uppercase; /* Mayúsculas */
+  border-radius: 2px; /* Borde suavemente redondeado */
+  transition: /* Transición suave de efectos */
     background 0.25s,
     transform 0.2s;
 }
-.h-btn-p:hover {
-  background: var(--dorado-cl);
-  transform: translateY(-3px);
+
+.h-btn-p:hover { /* Efecto al pasar el cursor sobre botón principal */
+  background: var(--dorado-cl); /* Aclarar color de fondo */
+  transform: translateY(-3px); /* Elevar ligeramente */
 }
-.h-btn-s {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 2px;
-  transition:
+
+.h-btn-s { /* Botón secundario */
+  display: inline-flex; /* Alineación interna en línea */
+  align-items: center; /* Centrado vertical */
+  gap: 10px; /* Espaciado interno */
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco semitransparente */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 0.8rem; /* Tamaño de letra */
+  font-weight: 600; /* Peso seminegrita */
+  letter-spacing: 0.12em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Mayúsculas */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Línea inferior discreta */
+  padding-bottom: 2px; /* Margen inferior respecto a la línea */
+  transition: /* Suavizado de color */
     color 0.25s,
     border-color 0.25s;
 }
-.h-btn-s:hover {
-  color: #fff;
-  border-color: #fff;
+
+.h-btn-s:hover { /* Efecto al pasar el cursor sobre botón secundario */
+  color: #fff; /* Iluminar texto a blanco sólido */
+  border-color: #fff; /* Iluminar línea a blanco sólido */
+}
+/* Indicador de desplazamiento (scroll) */
+.scroll-pill {
+  position: absolute; /* Posición absoluta dentro de su contenedor */
+  right: 48px; /* Distancia desde la derecha */
+  bottom: 72px; /* Distancia desde abajo */
+  display: flex; /* Alineación flex para el icono y texto */
+  align-items: center; /* Centrado vertical interno */
+  gap: 8px; /* Espacio entre elementos */
+  font-size: 0.68rem; /* Tamaño de fuente muy pequeño */
+  font-weight: 600; /* Peso de texto semi-negrita */
+  letter-spacing: 0.18em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+  color: rgba(255, 255, 255, 0.5); /* Blanco semitransparente */
+  writing-mode: vertical-rl; /* Modo de texto vertical */
+  transform: rotate(180deg); /* Orientación de abajo hacia arriba */
+  animation: bobUp 2.5s ease-in-out infinite; /* Animación de flotación infinita */
 }
 
-/* scroll pill */
-.scroll-pill {
-  position: absolute;
-  right: 48px;
-  bottom: 72px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  animation: bobUp 2.5s ease-in-out infinite;
-}
-@keyframes bobUp {
+@keyframes bobUp { /* Animación de rebote suave para el indicador */
   0%,
   100% {
-    transform: rotate(180deg) translateY(0);
+    transform: rotate(180deg) translateY(0); /* Posición inicial y final */
   }
   50% {
-    transform: rotate(180deg) translateY(-8px);
+    transform: rotate(180deg) translateY(-8px); /* Elevación intermedia de 8px */
   }
 }
 
+/* Sección Sobre Nosotros (About) */
 #about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  display: grid; /* Maquetación en cuadrícula */
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  min-height: 100vh; /* Altura mínima de la pantalla completa */
 }
 
+/* Columna izquierda fija al hacer scroll */
 .about-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
+  position: sticky; /* Queda fija mientras se desplaza la sección */
+  top: 0; /* Se adhiere al borde superior de la pantalla */
+  height: 100vh; /* Altura total de la pantalla */
+  overflow: hidden; /* Oculta recortes de imagen fuera de límites */
 }
+
 .about-sticky img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.about-sticky-badge {
-  position: absolute;
-  bottom: 52px;
-  left: 52px;
-  background: var(--rojo);
-  color: #fff;
-  padding: 22px 28px;
-  max-width: 280px;
-}
-.about-sticky-badge .big {
-  font-family: "Fraunces", serif;
-  font-size: 3.2rem;
-  font-weight: 900;
-  line-height: 1;
-  display: block;
-  color: var(--dorado-cl);
-}
-.about-sticky-badge p {
-  font-size: 0.82rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  margin-top: 8px;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  object-fit: cover; /* Ajusta e imita encuadre sin deformarse */
 }
 
+.about-sticky-badge { /* Tarjeta superpuesta sobre la imagen fija */
+  position: absolute; /* Ubicación absoluta sobre la imagen */
+  bottom: 52px; /* Distancia desde abajo */
+  left: 52px; /* Distancia desde la izquierda */
+  background: var(--rojo); /* Fondo rojo corporativo */
+  color: #fff; /* Texto en blanco */
+  padding: 22px 28px; /* Relleno interno */
+  max-width: 280px; /* Ancho máximo permitido */
+}
+
+.about-sticky-badge .big { /* Texto resaltado del badge */
+  font-family: "Fraunces", serif; /* Tipografía serif para números/destacados */
+  font-size: 3.2rem; /* Tamaño de fuente grande */
+  font-weight: 900; /* Peso extra negrita */
+  line-height: 1; /* Sin espaciado adicional de línea */
+  display: block; /* Ocupa su propia línea */
+  color: var(--dorado-cl); /* Texto dorado claro */
+}
+
+.about-sticky-badge p { /* Parrafo informativo del badge */
+  font-size: 0.82rem; /* Tamaño de fuente reducido */
+  line-height: 1.6; /* Interlineado cómodo */
+  opacity: 0.85; /* Ligera transparencia */
+  margin-top: 8px; /* Separación superior */
+}
+
+/* Columna derecha desplazable */
 .about-scroll {
-  padding: 100px 72px 100px 64px;
-  background: var(--crema);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 60px;
+  padding: 100px 72px 100px 64px; /* Rellenos internos (arriba, der, abajo, izq) */
+  background: var(--crema); /* Fondo de tono crema */
+  display: flex; /* Organización flexible vertical */
+  flex-direction: column; /* Apilamiento en columna */
+  justify-content: center; /* Centrado del contenido en el eje vertical */
+  gap: 60px; /* Separación generosa entre bloques */
 }
 
+/* Etiqueta superior o subtítulo pequeño */
 .atag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--rojo);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-.atag::before {
-  content: "";
-  width: 30px;
-  height: 2px;
-  background: var(--rojo);
+  font-size: 0.7rem; /* Tamaño muy pequeño */
+  font-weight: 600; /* Peso de texto semi-negrita */
+  letter-spacing: 0.22em; /* Espaciado amplio entre caracteres */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  color: var(--rojo); /* Color de texto rojo */
+  display: flex; /* Alineación flexible en línea */
+  align-items: center; /* Centrado vertical con el guion */
+  gap: 12px; /* Espacio con el guion izquierdo */
+  margin-bottom: 14px; /* Separación con el título */
 }
 
-.about-scroll h2 {
-  font-family: "Fraunces", serif;
-  font-size: clamp(2.6rem, 4vw, 3.8rem);
-  font-weight: 900;
-  line-height: 1.05;
-  color: var(--carbon);
-}
-.about-scroll h2 em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--rojo);
+.atag::before { /* Guion decorativo antes de la etiqueta */
+  content: ""; /* Elemento gráfico vacío */
+  width: 30px; /* Longitud del guion */
+  height: 2px; /* Grosor del guion */
+  background: var(--rojo); /* Color del guion */
 }
 
-.about-scroll p {
-  font-size: 1rem;
-  color: var(--gris);
-  line-height: 1.9;
+.about-scroll h2 { /* Título principal del bloque scrollable */
+  font-family: "Fraunces", serif; /* Fuente serif elegante */
+  font-size: clamp(2.6rem, 4vw, 3.8rem); /* Tamaño responsive adaptable */
+  font-weight: 900; /* Peso extra negrita */
+  line-height: 1.05; /* Interlineado muy apretado */
+  color: var(--carbon); /* Color de texto oscuro */
 }
 
+.about-scroll h2 em { /* Cursivas dentro del título */
+  font-style: italic; /* Texto en cursiva */
+  font-weight: 300; /* Peso ligero contrastante */
+  color: var(--rojo); /* Resaltado en color rojo */
+}
+
+.about-scroll p { /* Párrafo principal de texto */
+  font-size: 1rem; /* Tamaño de texto base */
+  color: var(--gris); /* Texto en tono gris */
+  line-height: 1.9; /* Interlineado alto para fácil lectura */
+}
+
+/* Cuadrícula de estadísticas o métricas */
 .about-numbers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background: var(--marfil-os);
-}
-.an-cell {
-  background: var(--marfil);
-  padding: 28px 24px;
-  transition: background 0.3s;
-}
-.an-cell:hover {
-  background: var(--carbon);
-}
-.an-cell:hover .an-val,
-.an-cell:hover .an-lbl {
-  color: #fff;
-}
-.an-cell:hover .an-val {
-  color: var(--dorado-cl);
-}
-.an-val {
-  font-family: "Fraunces", serif;
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: var(--rojo);
-  line-height: 1;
-  display: block;
-  transition: color 0.3s;
-}
-.an-lbl {
-  font-size: 0.82rem;
-  color: var(--gris);
-  margin-top: 5px;
-  line-height: 1.4;
-  transition: color 0.3s;
+  display: grid; /* Maquetación en cuadrícula */
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+  gap: 2px; /* Separa celdas creando líneas gracias al fondo */
+  background: var(--marfil-os); /* Color que actúa como borde divisor */
 }
 
+.an-cell { /* Celda individual de métrica */
+  background: var(--marfil); /* Fondo base de la celda */
+  padding: 28px 24px; /* Relleno interior */
+  transition: background 0.3s; /* Transición suave de color de fondo */
+}
+
+.an-cell:hover { /* Cambio al pasar el cursor sobre la celda */
+  background: var(--carbon); /* Fondo cambia a oscuro */
+}
+
+.an-cell:hover .an-val,
+.an-cell:hover .an-lbl { /* Textos al hacer hover */
+  color: #fff; /* Cambio general a texto blanco */
+}
+
+.an-cell:hover .an-val { /* Número al hacer hover */
+  color: var(--dorado-cl); /* El valor pasa a dorado claro */
+}
+
+.an-val { /* Valor numérico o porcentaje */
+  font-family: "Fraunces", serif; /* Fuente tipográfica serif */
+  font-size: 2.8rem; /* Tamaño de número grande */
+  font-weight: 900; /* Peso extra negrita */
+  color: var(--rojo); /* Color inicial rojo */
+  line-height: 1; /* Altura de línea ajustada */
+  display: block; /* Ocupa su propia línea */
+  transition: color 0.3s; /* Transición suave de color */
+}
+
+.an-lbl { /* Leyenda o descripción de la cifra */
+  font-size: 0.82rem; /* Tamaño de letra pequeño */
+  color: var(--gris); /* Color gris inicial */
+  margin-top: 5px; /* Espacio superior con el número */
+  line-height: 1.4; /* Interlineado ajustado */
+  transition: color 0.3s; /* Transición suave de color */
+}
 /* EXPERIENCIAS — bloque oscuro zigzag */
 #experiencias {
-  background: var(--carbon);
-  padding: 80px 0 100px;
+  background: var(--carbon); /* Fondo oscuro principal */
+  padding: 80px 0 100px; /* Relleno interior superior e inferior */
 }
 
 #experiencias .cab-top {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex-direction: column; /* Alineación de cabecera en columna */
+  align-items: center; /* Centrado horizontal de elementos */
+  text-align: center; /* Alineación del texto al centro */
 }
 
 #experiencias .cab-top-right {
-  max-width: 1000px;
-  text-align: center;
-  margin: 16px auto 50px;
-  max-width: 600px;
+  max-width: 1000px; /* Ancho máximo amplio (sobrescrito abajo) */
+  text-align: center; /* Centrado de texto */
+  margin: 16px auto 50px; /* Margen superior e inferior con centrado */
+  max-width: 600px; /* Ancho máximo final del bloque */
 }
+
 .exp-intro {
-  padding: 0 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 70px;
-  gap: 40px;
+  padding: 0 64px; /* Relleno lateral */
+  display: flex; /* Maquetación flexible */
+  justify-content: space-between; /* Distribución a los extremos */
+  align-items: flex-end; /* Alineación al borde inferior */
+  margin-bottom: 70px; /* Separación inferior con las tarjetas */
+  gap: 40px; /* Espacio entre columnas de texto */
 }
+
 #experiencias .cab-grid {
-  grid-template-columns: repeat(4, 320px);
-  justify-content: center;
-  gap: 24px;
+  grid-template-columns: repeat(4, 320px); /* 4 columnas fijas de 320px */
+  justify-content: center; /* Centrado de la rejilla */
+  gap: 24px; /* Separación entre tarjetas */
 }
 
 #experiencias .cab-card-img {
-  height: 200px;
-  object-fit: cover;
-  object-position: center center;
+  height: 200px; /* Altura inicial de la imagen */
+  object-fit: cover; /* Recorte proporcional de la imagen */
+  object-position: center center; /* Centrado de la foto */
 }
 
 #experiencias .cab-amenidades li {
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255); /* Texto de servicios en blanco */
 }
 
 #experiencias .cab-card-body {
-  padding: 20px 22px;
+  padding: 20px 22px; /* Relleno interno del cuerpo de tarjeta */
 }
 
 #experiencias .cab-card-body h3 {
-  font-size: 1.1rem;
-  color: #fff;
+  font-size: 1.1rem; /* Tamaño de título de tarjeta */
+  color: #fff; /* Texto en blanco */
 }
 
 #experiencias .cab-card-footer {
-  border-top-color: rgb(9, 8, 8);
+  border-top-color: rgb(9, 8, 8); /* Línea divisoria muy oscura */
 }
 
 #experiencias .cab-card {
-  background: #e8d9c4d2;
+  background: #e8d9c4d2; /* Fondo crema semitransparente de tarjeta */
 }
 
 #experiencias .cab-card-img {
-  height: 220px;
-}
-.exp-intro-left .etag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--dorado);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.exp-intro-left .etag::before {
-  content: "";
-  width: 30px;
-  height: 2px;
-  background: var(--dorado);
-}
-.exp-intro-left h2 {
-  font-family: "Fraunces", serif;
-  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1;
-}
-.exp-intro-left h2 em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--dorado-cl);
-}
-.exp-intro-right {
-  font-size: 0.9rem;
-  color: rgba(255, 0, 0, 0.45);
-  max-width: 300px;
-  line-height: 1.8;
-  text-align: right;
+  height: 220px; /* Altura final ajustada para la imagen */
 }
 
-/* CABAÑAS — cards flotantes*/
+.exp-intro-left .etag { /* Etiqueta superior del módulo */
+  font-size: 0.7rem; /* Tamaño de fuente reducido */
+  font-weight: 600; /* Peso seminegrita */
+  letter-spacing: 0.22em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  color: var(--dorado); /* Texto en color dorado */
+  display: flex; /* Alineación flexible con línea */
+  align-items: center; /* Centrado vertical */
+  gap: 12px; /* Espacio con el guion */
+  margin-bottom: 16px; /* Separación con el título */
+}
+
+.exp-intro-left .etag::before { /* Línea decorativa previa */
+  content: ""; /* Elemento gráfico vacío */
+  width: 30px; /* Longitud del guion */
+  height: 2px; /* Grosor de la línea */
+  background: var(--dorado); /* Color dorado */
+}
+
+.exp-intro-left h2 { /* Título de la sección */
+  font-family: "Fraunces", serif; /* Fuente serif elegante */
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem); /* Tamaño fluido responsive */
+  font-weight: 900; /* Peso extra negrita */
+  color: #fff; /* Texto en blanco */
+  line-height: 1; /* Interlineado muy compacto */
+}
+
+.exp-intro-left h2 em { /* Texto destacado del título */
+  font-style: italic; /* Texto en cursiva */
+  font-weight: 300; /* Peso fino contrastante */
+  color: var(--dorado-cl); /* Color dorado claro */
+}
+
+.exp-intro-right { /* Texto descriptivo a la derecha */
+  font-size: 0.9rem; /* Tamaño de letra compacto */
+  color: rgba(255, 0, 0, 0.45); /* Rojo translúcido */
+  max-width: 300px; /* Ancho máximo */
+  line-height: 1.8; /* Interlineado amplio */
+  text-align: right; /* Alineación a la derecha */
+}
+/* CABAÑAS — Tarjetas flotantes */
 #cabanas {
-  background: var(--marfil);
-  padding: 100px 64px;
+  background: var(--marfil); /* Fondo de la sección en tono marfil */
+  padding: 100px 64px; /* Relleno superior/inferior y lateral */
 }
 
 .cab-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 60px;
+  display: flex; /* Distribución flexible vertical */
+  flex-direction: column; /* Apilamiento en columna */
+  align-items: center; /* Centrado horizontal */
+  text-align: center; /* Alineación del texto al centro */
+  max-width: 600px; /* Ancho máximo del contenedor de texto */
+  margin: 0 auto 60px; /* Centrado horizontal y margen inferior */
 }
 
 .cab-top h2 {
-  font-family: "Fraunces", serif;
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: 500;
-  color: var(--carbon);
-  line-height: 1;
+  font-family: "Fraunces", serif; /* Fuente elegante serif */
+  font-size: clamp(2.8rem, 5vw, 4.5rem); /* Tamaños fluidos según pantalla */
+  font-weight: 500; /* Peso de texto medio */
+  color: var(--carbon); /* Color de texto oscuro */
+  line-height: 1; /* Interlineado muy ajustado */
 }
 
 .cab-top h2 em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--rojo);
-}
-
-.cab-top {
-  max-width: 600px;
+  font-style: italic; /* Estilo en cursiva */
+  font-weight: 300; /* Peso de fuente fino */
+  color: var(--rojo); /* Color de acento rojo */
 }
 
 .cab-top p {
-  font-size: 0.93rem;
-  color: var(--gris);
-  line-height: 1.85;
-  text-align: center;
-  margin: 16px auto 10px;
+  font-size: 0.93rem; /* Tamaño de fuente del párrafo */
+  color: var(--gris); /* Color gris tenue */
+  line-height: 1.85; /* Interlineado amplio para fácil lectura */
+  text-align: center; /* Texto centrado */
+  margin: 16px auto 10px; /* Margen vertical y centrado */
 }
 
 .cab-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 550px);
-  justify-content: center;
-  gap: 24px;
-  width: 100%;
+  display: grid; /* Layout en cuadrícula */
+  grid-template-columns: repeat(3, 550px); /* 3 columnas de 550px de ancho */
+  justify-content: center; /* Centrado de la cuadrícula completa */
+  gap: 24px; /* Espaciado entre tarjetas */
+  width: 100%; /* Ocupa todo el ancho disponible */
 }
 
 .cab-card {
-  background: var(--crema);
-  position: relative;
-  overflow: hidden;
-  transition:
+  background: var(--crema); /* Fondo crema de la tarjeta */
+  position: relative; /* Posicionamiento relativo para la insignia */
+  overflow: hidden; /* Oculta desbordamiento al hacer zoom en imagen */
+  transition: /* Transición suave de elevación y sombra */
     transform 0.35s,
     box-shadow 0.35s;
 }
+
 .cab-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 24px 60px rgba(28, 18, 8, 0.18);
+  transform: translateY(-10px); /* Efecto de elevación de la tarjeta */
+  box-shadow: 0 24px 60px rgba(28, 18, 8, 0.18); /* Proyección de sombra al pasar el cursor */
 }
 
 .cab-card-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center center;
-
-  transition: transform 0.5s;
+  width: 100%; /* Ancho completo del contenedor */
+  height: 300px; /* Altura fija para la foto */
+  object-fit: cover; /* Ajuste perfecto sin deformación */
+  object-position: center center; /* Centrado del encuadre */
+  transition: transform 0.5s; /* Transición suave de zoom */
 }
+
 .cab-card:hover .cab-card-img {
-  transform: scale(1.06);
+  transform: scale(1.06); /* Zoom ligero de la imagen al hacer hover */
 }
 
 .cab-card-num {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 44px;
-  height: 44px;
-  background: var(--rojo);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Fraunces", serif;
-  font-weight: 900;
-  font-size: 1.1rem;
+  position: absolute; /* Etiqueta numérica sobrepuesta */
+  top: 20px; /* Distancia superior */
+  left: 20px; /* Distancia izquierda */
+  width: 44px; /* Ancho del recuadro */
+  height: 44px; /* Altura del recuadro */
+  background: var(--rojo); /* Fondo rojo del indicador */
+  color: #fff; /* Texto blanco */
+  display: flex; /* Centrado del número */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  font-family: "Fraunces", serif; /* Tipografía del número */
+  font-weight: 900; /* Peso extra negrita */
+  font-size: 1.1rem; /* Tamaño de fuente del número */
 }
 
 .cab-card-body {
-  padding: 30px 28px;
+  padding: 30px 28px; /* Relleno interno de la tarjeta */
 }
+
 .cab-card-body h3 {
-  font-family: "Fraunces", serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--carbon);
-  margin-bottom: 14px;
+  font-family: "Fraunces", serif; /* Fuente serif para el nombre de la cabaña */
+  font-size: 1.5rem; /* Tamaño del título */
+  font-weight: 700; /* Texto en negrita */
+  color: var(--carbon); /* Color oscuro */
+  margin-bottom: 14px; /* Espacio inferior */
 }
 
 .cab-amenidades {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 22px;
+  list-style: none; /* Quita los puntos por defecto de la lista */
+  display: flex; /* Organización flex */
+  flex-direction: column; /* Alineación en lista vertical */
+  gap: 8px; /* Espaciado entre amenidades */
+  margin-bottom: 22px; /* Margen inferior con el pie */
 }
+
 .cab-amenidades li {
-  font-size: 0.84rem;
-  color: var(--gris);
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 0.84rem; /* Tamaño de letra compacto */
+  color: var(--gris); /* Color gris para el texto */
+  display: flex; /* Alineación en línea con la viñeta */
+  align-items: center; /* Centrado vertical con el punto */
+  gap: 10px; /* Espacio con el punto dorado */
 }
+
 .cab-amenidades li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--dorado);
-  flex-shrink: 0;
+  content: ""; /* Viñeta personalizada circular */
+  width: 6px; /* Ancho del punto */
+  height: 6px; /* Alto del punto */
+  border-radius: 50%; /* Forma totalmente circular */
+  background: var(--dorado); /* Color dorado para el punto */
+  flex-shrink: 0; /* Evita que el punto se reduzca de tamaño */
 }
 
 .cab-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--marfil-os);
-  padding-top: 18px;
+  display: flex; /* Alineación flexible en fila */
+  align-items: center; /* Centrado vertical */
+  justify-content: space-between; /* Separación a los extremos */
+  border-top: 1px solid var(--marfil-os); /* Línea divisoria superior */
+  padding-top: 18px; /* Espacio superior respecto a la línea */
 }
+
 .cab-precio .desde {
-  font-size: 0.72rem;
-  color: var(--gris);
-  display: block;
+  font-size: 0.72rem; /* Texto secundario pequeño */
+  color: var(--gris); /* Color gris tenue */
+  display: block; /* Muestra en su propia línea */
 }
+
 .cab-precio .monto {
-  font-family: "Fraunces", serif;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--rojo);
-  line-height: 1;
+  font-family: "Fraunces", serif; /* Fuente resaltada para el precio */
+  font-size: 1.8rem; /* Tamaño de letra grande */
+  font-weight: 900; /* Peso extra negrita */
+  color: var(--rojo); /* Color rojo corporativo */
+  line-height: 1; /* Sin espaciado de línea extra */
 }
+
 .cab-precio .unit {
-  font-size: 0.72rem;
-  color: var(--gris);
+  font-size: 0.72rem; /* Leyenda pequeña (ej: /noche) */
+  color: var(--gris); /* Color gris tenue */
 }
 
 .cab-reservar-btn {
-  background: var(--carbon);
-  color: #fff;
-  text-decoration: none;
-  padding: 11px 20px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: background 0.25s;
-}
-.cab-reservar-btn:hover {
-  background: var(--rojo);
+  background: var(--carbon); /* Fondo oscuro por defecto */
+  color: #fff; /* Texto blanco */
+  text-decoration: none; /* Quita subrayado de enlace */
+  padding: 11px 20px; /* Relleno interno */
+  font-size: 0.72rem; /* Tamaño de fuente del botón */
+  font-weight: 700; /* Texto en negrita */
+  letter-spacing: 0.1em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Convertir a mayúsculas */
+  transition: background 0.25s; /* Transición suave de color al pasar el cursor */
 }
 
-/* SERVICIOS — lista estilo periódico */
+.cab-reservar-btn:hover {
+  background: var(--rojo); /* Cambia a fondo rojo al pasar el cursor */
+}
+
+/* SERVICIOS — Lista estilo periódico */
 #servicios {
-  background: var(--carbon);
-  padding: 100px 64px;
+  background: var(--carbon); /* Fondo general oscuro */
+  padding: 100px 64px; /* Espaciado interno amplio */
 }
 
 .servicio-cabecera {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: end;
-  margin-bottom: 72px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 48px;
+  display: grid; /* Maquetación en cuadrícula de 2 columnas */
+  grid-template-columns: 1fr 1fr; /* Columnas de igual tamaño */
+  gap: 60px; /* Espacio entre columnas */
+  align-items: end; /* Alineación al borde inferior */
+  margin-bottom: 72px; /* Margen inferior */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Divisor sutil blanco */
+  padding-bottom: 48px; /* Espacio inferior interno */
 }
 
 .etiqueta-seccion {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--dorado);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  font-size: 1rem; /* Tamaño de subtítulo */
+  font-weight: 600; /* Peso de texto semi-negrita */
+  letter-spacing: 0.22em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Mayúsculas integrales */
+  color: var(--dorado); /* Texto en color dorado */
+  display: flex; /* Alineación flex con el guion */
+  align-items: center; /* Centrado vertical */
+  gap: 12px; /* Espacio con el guion decorativo */
+  margin-bottom: 16px; /* Margen inferior */
 }
+
 .etiqueta-seccion::before {
-  content: "";
-  width: 30px;
-  height: 2px;
-  background: var(--dorado);
+  content: ""; /* Línea decorativa previa */
+  width: 30px; /* Ancho de la línea */
+  height: 2px; /* Grosor de la línea */
+  background: var(--dorado); /* Color dorado */
 }
 
 .servicio-cabecera h2 {
-  font-family: "Fraunces", serif;
-  font-size: clamp(5rem, 5vw, 8rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1.05;
+  font-family: "Fraunces", serif; /* Fuente serif monumental */
+  font-size: clamp(5rem, 5vw, 8rem); /* Tamaño gigante adaptable */
+  font-weight: 900; /* Peso extra negrita */
+  color: #fff; /* Texto en blanco */
+  line-height: 1.05; /* Interlineado muy compacto */
 }
+
 .servicio-cabecera h2 em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--dorado-cl);
+  font-style: italic; /* Estilo en cursiva */
+  font-weight: 300; /* Peso fino contrastante */
+  color: var(--dorado-cl); /* Tono dorado claro */
 }
+
 .servicio-cabecera p {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.45);
-  line-height: 1.85;
-  align-self: center;
+  font-size: 1.5rem; /* Descripción grande y leíble */
+  color: rgba(255, 255, 255, 0.45); /* Blanco translúcido tenue */
+  line-height: 1.85; /* Interlineado cómodo */
+  align-self: center; /* Centrado en el eje vertical del grid */
 }
 
 .servicio-lista {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Contenedor en lista vertical */
+  flex-direction: column; /* Apilamiento en columna */
 }
 
 .servicio-fila {
-  display: grid;
-  grid-template-columns: 64px 1fr auto;
-  align-items: center;
-  gap: 32px;
-  padding: 26px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  transition: background 0.25s;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 -20px;
+  display: grid; /* Fila estilo tabla (icono - texto - etiqueta) */
+  grid-template-columns: 64px 1fr auto; /* Ancho de columnas específico */
+  align-items: center; /* Centrado vertical de los 3 elementos */
+  gap: 32px; /* Espaciado entre elementos */
+  padding: 26px 0; /* Relleno vertical de cada fila */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07); /* Separador inferior sutil */
+  transition: background 0.25s; /* Transición suave para el estado hover */
+  padding-left: 20px; /* Relleno interno izquierdo */
+  padding-right: 20px; /* Relleno interno derecho */
+  margin: 0 -20px; /* Compensación para expandir el fondo del hover */
 }
+
 .servicio-fila:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.04); /* Fondo ligeramente más claro al pasar el cursor */
 }
+
 .servicio-fila:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.07); /* Borde superior solo en la primera fila */
 }
 
 .servicio-icono {
-  width: 56px;
-  height: 56px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  transition:
+  width: 56px; /* Ancho del contenedor de icono */
+  height: 56px; /* Alto del contenedor de icono */
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Borde sutil */
+  display: flex; /* Centrado del icono */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  font-size: 1.5rem; /* Tamaño del icono */
+  flex-shrink: 0; /* Evita compresión del recuadro */
+  transition: /* Transición suave de color */
     background 0.25s,
     border-color 0.25s;
 }
+
 .servicio-fila:hover .servicio-icono {
-  background: var(--rojo);
-  border-color: var(--rojo);
+  background: var(--rojo); /* El recuadro del icono pasa a fondo rojo en hover */
+  border-color: var(--rojo); /* El borde pasa a rojo en hover */
 }
 
 .servicio-texto h4 {
-  font-family: "Fraunces", serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 5px;
+  font-family: "Fraunces", serif; /* Fuente del título del servicio */
+  font-size: 1.15rem; /* Tamaño de letra */
+  font-weight: 700; /* Texto en negrita */
+  color: #fff; /* Texto blanco */
+  margin-bottom: 5px; /* Margen inferior */
 }
+
 .servicio-texto p {
-  font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.4);
-  line-height: 1.6;
+  font-size: 0.84rem; /* Tamaño de la descripción */
+  color: rgba(255, 255, 255, 0.4); /* Texto secundario translúcido */
+  line-height: 1.6; /* Interlineado */
 }
 
 .servicio-etiqueta {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
-  white-space: nowrap;
+  font-size: 0.68rem; /* Etiqueta o categoría pequeña a la derecha */
+  font-weight: 600; /* Peso semi-negrita */
+  letter-spacing: 0.12em; /* Espaciado entre caracteres */
+  text-transform: uppercase; /* Mayúsculas */
+  color: rgba(255, 255, 255, 0.25); /* Texto muy sutil */
+  white-space: nowrap; /* Impide que la etiqueta rompa en múltiples líneas */
 }
-
-/* ════════════════════════════════
-     CÓMO LLEGAR — full bleed diag
-  ════════════════════════════════ */
+/* CÓMO LLEGAR — Full bleed diag */
 #llegada {
-  background: var(--oliva);
-  position: relative;
-  overflow: hidden;
-  padding: 0;
+  background: var(--oliva); /* Fondo de la sección en tono verde oliva */
+  position: relative; /* Posicionamiento relativo para la capa de desbordamiento */
+  overflow: hidden; /* Oculta cualquier elemento fuera de los límites */
+  padding: 0; /* Sin relleno exterior en el contenedor principal */
 }
 
 .llegada-interior {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  display: grid; /* Maquetación en cuadrícula */
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho (texto y mapa) */
+  min-height: 100vh; /* Altura mínima de la pantalla completa */
 }
 
 .llegada-izquierda {
-  padding: 100px 64px 100px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 100px 64px 100px 64px; /* Relleno interior para dar aire al texto */
+  display: flex; /* Organización flex */
+  flex-direction: column; /* Alineación en columna */
+  justify-content: center; /* Centrado vertical del contenido */
 }
 
 .llegada-etiqueta {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--dorado-cl);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  font-size: 0.7rem; /* Tamaño de letra pequeño */
+  font-weight: 600; /* Peso de texto semi-negrita */
+  letter-spacing: 0.22em; /* Espaciado amplio entre letras */
+  text-transform: uppercase; /* Mayúsculas integrales */
+  color: var(--dorado-cl); /* Texto dorado claro */
+  display: flex; /* Alineación flexible en fila con la línea */
+  align-items: center; /* Centrado vertical con la línea */
+  gap: 12px; /* Espacio entre la línea decorativa y el texto */
+  margin-bottom: 20px; /* Separación con el título */
 }
+
 .llegada-etiqueta::before {
-  content: "";
-  width: 30px;
-  height: 2px;
-  background: var(--dorado-cl);
+  content: ""; /* Guion decorativo previo */
+  width: 30px; /* Ancho de la línea */
+  height: 2px; /* Grosor de la línea */
+  background: var(--dorado-cl); /* Color dorado claro */
 }
 
 .llegada-izquierda h2 {
-  font-family: "Fraunces", serif;
-  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 44px;
+  font-family: "Fraunces", serif; /* Fuente tipográfica serif */
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem); /* Tamaños fluidos adaptables */
+  font-weight: 900; /* Peso extra negrita */
+  color: #fff; /* Texto blanco */
+  line-height: 1; /* Interlineado muy apretado */
+  margin-bottom: 44px; /* Separación inferior respecto a la lista de pasos */
 }
+
 .llegada-izquierda h2 em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--dorado-cl);
+  font-style: italic; /* Texto en cursiva */
+  font-weight: 300; /* Peso ligero contrastante */
+  color: var(--dorado-cl); /* Tono dorado claro */
 }
 
 .ll-pasos {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  display: flex; /* Contenedor en lista vertical */
+  flex-direction: column; /* Apilamiento en columna */
+  gap: 0; /* Espaciado administrado por los paddings individuales */
 }
 
 .ll-paso {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex; /* Estructura horizontal (número + contenido) */
+  gap: 24px; /* Espacio entre el número y el texto */
+  align-items: flex-start; /* Alineación al borde superior */
+  padding: 24px 0; /* Relleno vertical por cada paso */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); /* Divisor inferior sutil */
 }
+
 .ll-paso:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12); /* Borde superior solo en el primer paso */
 }
 
 .ll-numero {
-  font-family: "Fraunces", serif;
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.15);
-  line-height: 1;
-  min-width: 48px;
+  font-family: "Fraunces", serif; /* Fuente elegante para la numeración */
+  font-size: 2.2rem; /* Tamaño de letra grande */
+  font-weight: 900; /* Peso extra negrita */
+  color: rgba(255, 255, 255, 0.15); /* Blanco muy translúcido para fondo decorativo */
+  line-height: 1; /* Altura de línea compacta */
+  min-width: 48px; /* Ancho mínimo para mantener espacio consistente */
 }
 
 .ll-paso-contenido h4 {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: #fff;
-  margin-bottom: 6px;
-  margin-top: 4px;
+  font-weight: 700; /* Texto en negrita */
+  font-size: 0.95rem; /* Tamaño de título del paso */
+  color: #fff; /* Texto en blanco */
+  margin-bottom: 6px; /* Espacio inferior con la descripción */
+  margin-top: 4px; /* Ligera alineación con la parte superior del número */
 }
+
 .ll-paso-contenido p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.65;
+  font-size: 0.85rem; /* Tamaño de fuente de la descripción */
+  color: rgba(255, 255, 255, 0.55); /* Texto blanco semitransparente */
+  line-height: 1.65; /* Interlineado cómodo */
 }
 
 .ll-extras {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 36px;
+  display: grid; /* Maquetación en cuadrícula */
+  grid-template-columns: 1fr 1fr; /* Dos columnas para los datos extra */
+  gap: 14px; /* Separación entre tarjetas de información extra */
+  margin-top: 36px; /* Espacio superior con respecto a los pasos */
 }
 
 .ll-extra {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 16px 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  background: rgba(0, 0, 0, 0.2); /* Fondo oscuro translúcido */
+  padding: 16px 18px; /* Relleno interno */
+  display: flex; /* Alineación flex para icono y texto */
+  align-items: center; /* Centrado vertical */
+  gap: 12px; /* Espaciado interno */
 }
+
 .ll-extra span:first-child {
-  font-size: 1.4rem;
+  font-size: 1.4rem; /* Tamaño grande para el icono */
 }
+
 .ll-extra strong {
-  display: block;
-  color: #fff;
-  font-size: 0.88rem;
+  display: block; /* Muestra en su propia línea */
+  color: #fff; /* Texto principal en blanco */
+  font-size: 0.88rem; /* Tamaño de letra */
 }
+
 .ll-extra small {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.5); /* Texto aclaratorio secundario */
+  font-size: 0.76rem; /* Tamaño de letra pequeño */
 }
 
 .ll-mapas {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--dorado);
-  color: var(--carbon);
-  text-decoration: none;
-  padding: 14px 30px;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 30px;
-  border-radius: 2px;
-  transition: background 0.25s;
-  align-self: flex-start;
+  display: inline-flex; /* Alineación en línea flexible */
+  align-items: center; /* Centrado vertical */
+  gap: 10px; /* Espacio con posible icono */
+  background: var(--dorado); /* Fondo dorado */
+  color: var(--carbon); /* Texto oscuro */
+  text-decoration: none; /* Quita subrayado */
+  padding: 14px 30px; /* Relleno interior */
+  font-weight: 700; /* Texto en negrita */
+  font-size: 0.78rem; /* Tamaño de fuente */
+  letter-spacing: 0.1em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Mayúsculas */
+  margin-top: 30px; /* Margen superior respecto a las tarjetas extra */
+  border-radius: 2px; /* Esquinas ligeramente suaves */
+  transition: background 0.25s; /* Transición suave de color al pasar el cursor */
+  align-self: flex-start; /* Evita que el botón se estire a todo el ancho */
 }
+
 .ll-mapas:hover {
-  background: var(--dorado-cl);
+  background: var(--dorado-cl); /* Cambia a dorado claro al pasar el cursor */
 }
 
 .llegada-derecha {
-  position: relative;
-  overflow: hidden;
+  position: relative; /* Posicionamiento relativo para contener el mapa y el tinte */
+  overflow: hidden; /* Evita desbordamientos */
 }
+
 .llegada-derecha iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  min-height: 600px;
-  filter: saturate(0.7) sepia(0.3);
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 100%; /* Ocupa toda la altura disponible */
+  border: none; /* Elimina borde predeterminado de los iframes */
+  min-height: 600px; /* Altura mínima asegurada en pantallas pequeñas */
+  filter: saturate(0.7) sepia(0.3); /* Filtro cromático para personalizar estética del mapa */
 }
+
 .llegada-derecha::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(92, 107, 68, 0.25);
-  z-index: 1;
-  pointer-events: none;
+  content: ""; /* Capa decorativa de tinte superior */
+  position: absolute; /* Coordenadas absolutas */
+  inset: 0; /* Ocupa la totalidad del mapa */
+  background: rgba(92, 107, 68, 0.25); /* Tinte verdoso semitransparente sobre el mapa */
+  z-index: 1; /* Prioridad de capa sobre el iframe */
+  pointer-events: none; /* Permite interactuar con el mapa ignorando esta capa */
+}
+/* GALERÍA — Mosaico de imágenes */
+#galeria {
+  background: var(--crema); /* Fondo en tono crema */
+  padding: 100px 64px; /* Relleno interior superior e inferior */
 }
 
-#galeria {
-            background: var(--crema);
-            padding: 100px 64px;
-          }
+.gal-head {
+  display: flex; /* Alineación flexible */
+  justify-content: space-between; /* Distribución a los extremos */
+  align-items: flex-end; /* Alineación a la base */
+  margin-bottom: 52px; /* Margen inferior */
+  gap: 30px; /* Separación interna */
+}
 
-          .gal-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 52px;
-            gap: 30px;
-          }
-          .gtag {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--rojo);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-          }
-          .gtag::before { content:''; width:30px; height:2px; background:var(--rojo); }
-          .gal-head h2 {
-            font-family: 'Fraunces', serif;
-            font-size: clamp(2.4rem, 4vw, 3.6rem);
-            font-weight: 900;
-            color: var(--carbon);
-            line-height: 1.0;
-          }
-          .gal-head h2 em { font-style: italic; font-weight: 300; color: var(--rojo); }
-          .gal-head p { font-size: 0.88rem; color: var(--gris); line-height: 1.7; max-width:260px; text-align:right; }
+.gtag {
+  font-size: 0.7rem; /* Tamaños pequeños para subtítulo */
+  font-weight: 600; /* Peso semi-negrita */
+  letter-spacing: 0.22em; /* Espaciado entre caracteres */
+  text-transform: uppercase; /* Mayúsculas integrales */
+  color: var(--rojo); /* Color de acento */
+  display: flex; /* Alineación flex con el guion */
+  align-items: center; /* Centrado vertical */
+  gap: 12px; /* Espacio con el guion decorativo */
+  margin-bottom: 14px; /* Separación con el título */
+}
 
-          /* mosaico asimétrico sin gaps regulares */
-          .gal-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: 280px 220px 300px;
-            gap: 8px;
-          }
+.gtag::before {
+  content: ""; /* Guion decorativo previo */
+  width: 30px; /* Ancho de la línea */
+  height: 2px; /* Grosor de la línea */
+  background: var(--rojo); /* Color del guion */
+}
 
-          .gal-cel {
-            overflow: hidden;
-            position: relative;
-          }
-          .gal-cel img { width:100%; height:100%; object-fit:cover; transition: transform 0.55s ease; }
-          .gal-cel:hover img { transform: scale(1.1); }
+.gal-head h2 {
+  font-family: 'Fraunces', serif; /* Tipografía serif elegida */
+  font-size: clamp(2.4rem, 4vw, 3.6rem); /* Tamaño fluido responsive */
+  font-weight: 900; /* Peso extra negrita */
+  color: var(--carbon); /* Texto en tono oscuro */
+  line-height: 1.0; /* Interlineado muy cerrado */
+}
 
-          .gal-cel:nth-child(1) { grid-column: 1 / 6;  grid-row: 1; }
-          .gal-cel:nth-child(2) { grid-column: 6 / 9;  grid-row: 1; }
-          .gal-cel:nth-child(3) { grid-column: 9 / 13; grid-row: 1; }
-          .gal-cel:nth-child(4) { grid-column: 1 / 4;  grid-row: 2; }
-          .gal-cel:nth-child(5) { grid-column: 4 / 8;  grid-row: 2; }
-          .gal-cel:nth-child(6) { grid-column: 8 / 13; grid-row: 2; }
-          .gal-cel:nth-child(7) { grid-column: 1 / 5;  grid-row: 3; }
-          .gal-cel:nth-child(8) { grid-column: 5 / 10; grid-row: 3; }
-          .gal-cel:nth-child(9) { grid-column: 10/ 13; grid-row: 3; }
+.gal-head h2 em {
+  font-style: italic; /* Cursiva estilizada */
+  font-weight: 300; /* Peso fino de contraste */
+  color: var(--rojo); /* Acento de color rojo */
+}
 
-          .gal-cel .hover-cap {
-            position: absolute;
-            inset: 0;
-            background: rgba(28,18,8,0.6);
-            display: flex;
-            align-items: flex-end;
-            padding: 22px;
-            opacity: 0;
-            transition: opacity 0.35s;
-          }
-          .gal-cel:hover .hover-cap { opacity: 1; }
-          .hover-cap span {
-            font-family: 'Fraunces', serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #fff;
-            font-style: italic;
-          }
+.gal-head p {
+  font-size: 0.88rem; /* Tamaño de fuente compacto */
+  color: var(--gris); /* Color gris tenue */
+  line-height: 1.7; /* Interlineado cómodo */
+  max-width: 260px; /* Limite de ancho para el texto */
+  text-align: right; /* Alineación a la derecha */
+}
 
-          /* ════════════════════════════════
-            TESTIMONIOS — tarjetas oblicuas
-          ════════════════════════════════ */
-          #testimonios {
-            background: var(--marfil);
-            padding: 100px 64px;
-          }
+/* Mosaico asimétrico de 12 columnas */
+.gal-grid {
+  display: grid; /* Maquetación en cuadrícula */
+  grid-template-columns: repeat(12, 1fr); /* 12 columnas proporcionales */
+  grid-template-rows: 280px 220px 300px; /* Altura de las 3 filas principales */
+  gap: 8px; /* Separación fina entre celdas */
+}
 
-          .tt-head {
-            text-align: center;
-            margin-bottom: 70px;
-          }
-          .tttag {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--rojo);
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 16px;
-          }
-          .tttag::before,
-          .tttag::after { content:''; width:36px; height:2px; background:var(--rojo); }
-          .tt-head h2 {
-            font-family: 'Fraunces', serif;
-            font-size: clamp(2.4rem, 4vw, 3.8rem);
-            font-weight: 900;
-            color: var(--carbon);
-            line-height: 1.05;
-          }
-          .tt-head h2 em { font-style: italic; font-weight: 300; color: var(--rojo); }
+.gal-cel {
+  overflow: hidden; /* Oculta zoom o contenido saliente */
+  position: relative; /* Posición relativa para sobreponer el hover cap */
+  cursor: pointer; /* Cambia el cursor a mano interactiva */
+}
 
-          .tt-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-          }
+.gal-cel img {
+  width: 100%; /* Ocupa ancho completo de su celda */
+  height: 100%; /* Ocupa alto completo de su celda */
+  object-fit: cover; /* Ajuste perfecto de la foto */
+  transition: transform 0.55s ease; /* Transición suave para zoom */
+}
 
-          .tt-card {
-            background: var(--crema);
-            padding: 40px 36px;
-            position: relative;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-bottom: 4px solid transparent;
-          }
-          .tt-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(28,18,8,0.12);
-            border-bottom-color: var(--rojo);
-          }
+.gal-cel:hover img {
+  transform: scale(1.1); /* Efecto zoom de la imagen al hover */
+}
 
-          .tt-stars {
-            font-size: 0.85rem;
-            color: var(--dorado);
-            letter-spacing: 4px;
-            margin-bottom: 18px;
-          }
-          .tt-comilla {
-            font-family: 'Fraunces', serif;
-            font-size: 5rem;
-            font-weight: 900;
-            color: var(--marfil-os);
-            position: absolute;
-            top: 16px; right: 26px;
-            line-height: 1;
-          }
-          .tt-text {
-            font-size: 0.93rem;
-            color: var(--gris);
-            line-height: 1.85;
-            font-style: italic;
-            margin-bottom: 28px;
-          }
-          .tt-author {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding-top: 20px;
-            border-top: 1px solid var(--marfil-os);
-          }
-          .tt-av {
-            width: 46px; height: 46px;
-            background: var(--rojo);
-            color: #fff;
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Fraunces', serif;
-            font-weight: 900;
-            font-size: 1.15rem;
-            flex-shrink: 0;
-          }
-          .tt-name { font-weight: 700; font-size: 0.9rem; color: var(--carbon); }
-          .tt-loc  { font-size: 0.78rem; color: var(--gris); }
+/* Distribución manual de las 9 celdas en el grid */
+.gal-cel:nth-child(1) { grid-column: 1 / 6;  grid-row: 1; }
+.gal-cel:nth-child(2) { grid-column: 6 / 9;  grid-row: 1; }
+.gal-cel:nth-child(3) { grid-column: 9 / 13; grid-row: 1; }
+.gal-cel:nth-child(4) { grid-column: 1 / 4;  grid-row: 2; }
+.gal-cel:nth-child(5) { grid-column: 4 / 8;  grid-row: 2; }
+.gal-cel:nth-child(6) { grid-column: 8 / 13; grid-row: 2; }
+.gal-cel:nth-child(7) { grid-column: 1 / 5;  grid-row: 3; }
+.gal-cel:nth-child(8) { grid-column: 5 / 10; grid-row: 3; }
+.gal-cel:nth-child(9) { grid-column: 10 / 13; grid-row: 3; }
 
+/* Capa flotante al pasar sobre imágenes de la galería */
+.gal-cel .hover-cap {
+  position: absolute; /* Coordenadas absolutas sobre la imagen */
+  inset: 0; /* Ocupa toda la celda */
+  background: rgba(28, 18, 8, 0.6); /* Capa oscura translúcida */
+  display: flex; /* Organización flex */
+  align-items: flex-end; /* Alineación del texto al borde inferior */
+  padding: 22px; /* Relleno interior */
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.35s; /* Animación de aparición */
+}
 
-      .gal-cel{
-        cursor:pointer;
-      }
+.gal-cel:hover .hover-cap {
+  opacity: 1; /* Revela capa al pasar el cursor */
+}
 
-      .gal-modal{
-        position: fixed;
-        inset: 0;
-        background: rgba(15,10,5,.85);
-        backdrop-filter: blur(8px);
+.hover-cap span {
+  font-family: 'Fraunces', serif; /* Tipografía para el pie de foto */
+  font-size: 0.9rem; /* Tamaño de letra */
+  font-weight: 700; /* Texto en negrita */
+  color: #fff; /* Texto blanco */
+  font-style: italic; /* Cursiva elegante */
+}
 
-        display:flex;
-        justify-content:center;
-        align-items:center;
+/* MODAL DE GALERÍA (LIGHTBOX) */
+.gal-modal {
+  position: fixed; /* Mantiene fijo en toda la pantalla */
+  inset: 0; /* Ocupa 100% de la ventana */
+  background: rgba(15, 10, 5, .85); /* Fondo oscuro muy opaco */
+  backdrop-filter: blur(8px); /* Desfoque del fondo posterior */
+  display: flex; /* Centrado interno con flex */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  z-index: 9999; /* Máxima prioridad de capa */
+  opacity: 0; /* Invisible por defecto */
+  visibility: hidden; /* Desactivado de eventos interactivos */
+  transition: .4s ease; /* Transición suave de entrada/salida */
+}
 
-        z-index:9999;
+.gal-modal.active {
+  opacity: 1; /* Muestra el modal */
+  visibility: visible; /* Activa la interacción */
+}
 
-        opacity:0;
-        visibility:hidden;
-        transition:.4s ease;
-      }
+.gal-modal-box {
+  width: min(1050px, 92%); /* Ancho máximo adaptable */
+  background: #1b140d; /* Fondo oscuro contenedor */
+  display: grid; /* Maquetación en dos columnas */
+  grid-template-columns: 1.3fr 1fr; /* Columna de imagen más ancha que el texto */
+  overflow: hidden; /* Oculta excesos */
+  position: relative; /* Posicionamiento interno de controles */
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .35); /* Sombra intensa de elevación */
+  transform: scale(.88); /* Ligeramente reducido por defecto */
+  transition: .35s ease; /* Transición para efecto pop-up */
+}
 
-      .gal-modal.active{
-        opacity:1;
-        visibility:visible;
-      }
+.gal-modal.active .gal-modal-box {
+  transform: scale(1); /* Escala normal al abrir modal */
+}
 
-      .gal-modal-box{
-        width:min(1050px,92%);
-        background: #1b140d;
+.gal-modal-img {
+  background: #111; /* Fondo muy oscuro para contraste */
+  display: flex; /* Centrado flex */
+  justify-content: center; /* Centrado horizontal de la imagen */
+  align-items: center; /* Centrado vertical de la imagen */
+}
 
-        display:grid;
-        grid-template-columns:1.3fr 1fr;
+.gal-modal-img img {
+  width: 100%; /* Ocupa el espacio disponible */
+  max-height: 90vh; /* Limite de altura vertical */
+  object-fit: contain; /* Mantiene la proporción sin recortar */
+}
 
-        overflow:hidden;
-        position:relative;
+.gal-modal-info {
+  padding: 60px; /* Relleno amplio para la descripción */
+  display: flex; /* Apilamiento en columna */
+  flex-direction: column; /* Alineación vertical */
+  justify-content: center; /* Centrado de contenido vertical */
+}
 
-        box-shadow:0 30px 90px rgba(0,0,0,.35);
+.gal-modal-info p {
+  color: white; /* Texto en blanco */
+  line-height: 1.9; /* Interlineado amplio */
+  font-size: .95rem; /* Tamaño legible */
+}
 
-        transform:scale(.88);
-        transition:.35s ease;
-      }
+.gal-modal-info h3 {
+  font-family: 'Fraunces', serif; /* Título elegante */
+  font-size: 2rem; /* Tamaño de fuente alto */
+  color: white; /* Texto en blanco */
+  margin-bottom: 18px; /* Margen inferior */
+}
 
-      .gal-modal.active .gal-modal-box{
-        transform:scale(1);
-      }
+.cerrar-modal {
+  position: absolute; /* Ubicación en esquina superior */
+  top: 20px; /* Distancia superior */
+  right: 20px; /* Distancia derecha */
+  width: 50px; /* Ancho del botón */
+  height: 50px; /* Alto del botón */
+  border: none; /* Sin borde */
+  border-radius: 50%; /* Forma completamente circular */
+  cursor: pointer; /* Apariencia de botón clicleable */
+  font-size: 1rem; /* Tamaño de icono o texto interno */
+  color: white; /* Color del icono */
+  background: rgba(255, 255, 255, .12); /* Fondo sutil translúcido */
+  transition: .35s; /* Transición de hover */
+}
 
-      .gal-modal-img{
-        background:#111;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-      }
+.cerrar-modal:hover {
+  background: var(--rojo); /* Fondo rojo al pasar el cursor */
+  transform: rotate(90deg); /* Animación de giro */
+}
 
-      .gal-modal-img img{
-        width:100%;
-        max-height:90vh;
-        object-fit:contain;
-      }
+/* TESTIMONIOS — Tarjetas de opiniones */
+#testimonios {
+  background: var(--marfil); /* Fondo en tono marfil */
+  padding: 100px 64px; /* Relleno vertical y horizontal */
+}
 
-      .gal-modal-info{
-        padding:60px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-      }
+.tt-head {
+  text-align: center; /* Centrado general del encabezado */
+  margin-bottom: 70px; /* Margen inferior */
+}
 
-    .gal-modal-info p{
-      color: white;
-      line-height:1.9;
-      font-size:.95rem;
-    }
-    .gal-modal-info h3{
-      font-family:'Fraunces', serif;
-      font-size:2rem;
-      color:white;
-      margin-bottom:18px;
-    }
+.tttag {
+  font-size: 0.7rem; /* Subtítulo pequeño */
+  font-weight: 600; /* Peso semi-negrita */
+  letter-spacing: 0.22em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Mayúsculas integrales */
+  color: var(--rojo); /* Color rojo corporativo */
+  display: inline-flex; /* Alineación flex en línea */
+  align-items: center; /* Centrado vertical */
+  gap: 14px; /* Espacio con las líneas laterales */
+  margin-bottom: 16px; /* Separación inferior */
+}
 
-      .cerrar-modal{
-        position:absolute;
-        top:20px;
-        right:20px;
+.tttag::before,
+.tttag::after {
+  content: ''; /* Líneas laterales decorativas */
+  width: 36px; /* Ancho de cada línea */
+  height: 2px; /* Grosor */
+  background: var(--rojo); /* Color rojo */
+}
 
-        width:50px;
-        height:50px;
+.tt-head h2 {
+  font-family: 'Fraunces', serif; /* Fuente principal para títulos */
+  font-size: clamp(2.4rem, 4vw, 3.8rem); /* Tamaño adaptable */
+  font-weight: 900; /* Peso extra negrita */
+  color: var(--carbon); /* Texto oscuro */
+  line-height: 1.05; /* Interlineado ajustado */
+}
 
-        border:none;
-        border-radius:50%;
+.tt-head h2 em {
+  font-style: italic; /* Cursiva elegante */
+  font-weight: 300; /* Peso liviano */
+  color: var(--rojo); /* Color de acento rojo */
+}
 
-        cursor:pointer;
+.tt-grid {
+  display: grid; /* Maquetación en cuadrícula de 3 columnas */
+  grid-template-columns: repeat(3, 1fr); /* Columnas equivalentes */
+  gap: 24px; /* Espaciado entre tarjetas */
+}
 
-        font-size:1rem;
-        color:white;
+.tt-card {
+  background: var(--crema); /* Fondo de la tarjeta */
+  padding: 40px 36px; /* Espaciado interno amplio */
+  position: relative; /* Posición relativa para ubicar la comilla */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición suave al hover */
+  border-bottom: 4px solid transparent; /* Borde inferior oculto inicialmente */
+}
 
-        background:rgba(255,255,255,.12);
-        transition:.35s;
-      }
+.tt-card:hover {
+  transform: translateY(-8px); /* Elevación de tarjeta en hover */
+  box-shadow: 0 20px 50px rgba(28, 18, 8, 0.12); /* Sombra elegante */
+  border-bottom-color: var(--rojo); /* Revela borde rojo inferior */
+}
 
-      .cerrar-modal:hover{
-        background:var(--rojo);
-        transform:rotate(90deg);
-      }
+.tt-stars {
+  font-size: 0.85rem; /* Tamaño del icono/estrellas */
+  color: var(--dorado); /* Color dorado */
+  letter-spacing: 4px; /* Espaciado entre estrellas */
+  margin-bottom: 18px; /* Margen inferior */
+}
 
-      footer {
-  background: var(--carbon);
-  padding: 80px 64px 36px;
+.tt-comilla {
+  font-family: 'Fraunces', serif; /* Tipografía para el elemento gigante */
+  font-size: 5rem; /* Tamaño gigante */
+  font-weight: 900; /* Extra negrita */
+  color: var(--marfil-os); /* Tono de fondo decorativo sutil */
+  position: absolute; /* Ubicación fija en la esquina */
+  top: 16px; /* Distancia superior */
+  right: 26px; /* Distancia derecha */
+  line-height: 1; /* Sin separación de línea */
+}
+
+.tt-text {
+  font-size: 0.93rem; /* Tamaño de texto de la opinión */
+  color: var(--gris); /* Color gris de lectura */
+  line-height: 1.85; /* Interlineado amplio */
+  font-style: italic; /* Texto en cursiva */
+  margin-bottom: 28px; /* Espacio inferior */
+}
+
+.tt-author {
+  display: flex; /* Alineación horizontal de avatar y nombre */
+  align-items: center; /* Centrado vertical */
+  gap: 14px; /* Espacio interno */
+  padding-top: 20px; /* Relleno superior respecto al divisor */
+  border-top: 1px solid var(--marfil-os); /* Línea divisoria superior */
+}
+
+.tt-av {
+  width: 46px; /* Ancho del avatar */
+  height: 46px; /* Alto del avatar */
+  background: var(--rojo); /* Fondo rojo del círculo */
+  color: #fff; /* Texto en blanco (iniciales) */
+  display: flex; /* Centrado del texto interno */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  font-family: 'Fraunces', serif; /* Fuente serif */
+  font-weight: 900; /* Extra negrita */
+  font-size: 1.15rem; /* Tamaño de la inicial */
+  flex-shrink: 0; /* Evita que el avatar se deforme */
+}
+
+.tt-name {
+  font-weight: 700; /* Nombre del cliente en negrita */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  color: var(--carbon); /* Texto en tono oscuro */
+}
+
+.tt-loc {
+  font-size: 0.78rem; /* Ubicación o procedencia pequeña */
+  color: var(--gris); /* Color gris sutil */
+}
+
+/* PIE DE PÁGINA (FOOTER) */
+footer {
+  background: var(--carbon); /* Fondo oscuro general */
+  padding: 80px 64px 36px; /* Relleno superior, lados y parte inferior */
 }
 
 .pie-cuadricula {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr 1fr;
-  gap: 60px;
-  padding-bottom: 52px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: grid; /* Maquetación en cuadrícula para las columnas */
+  grid-template-columns: 2.2fr 1fr 1fr 1fr; /* Columna principal más ancha */
+  gap: 60px; /* Espaciado entre columnas */
+  padding-bottom: 52px; /* Relleno inferior */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07); /* Divisor horizontal sutil */
 }
 
 .pie-marca-nombre {
-  font-family: 'Fraunces', serif;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: #fff;
-  line-height: 1;
-  display: block;
-  margin-bottom: 6px;
+  font-family: 'Fraunces', serif; /* Fuente de marca */
+  font-size: 1.8rem; /* Tamaño de letra principal */
+  font-weight: 900; /* Extra negrita */
+  color: #fff; /* Texto en blanco */
+  line-height: 1; /* Interlineado */
+  display: block; /* Muestra en su propia línea */
+  margin-bottom: 6px; /* Separación con el subtítulo */
 }
+
 .pie-marca-subtitulo {
-  font-size: 0.64rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--dorado);
-  display: block;
-  margin-bottom: 18px;
+  font-size: 0.64rem; /* Subtítulo muy pequeño */
+  letter-spacing: 0.22em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Mayúsculas integrales */
+  color: var(--dorado); /* Tono dorado corporativo */
+  display: block; /* Muestra en su propia línea */
+  margin-bottom: 18px; /* Margen inferior */
 }
-.pie-marca p { font-size: 0.84rem; color: rgba(255,255,255,0.38); line-height: 1.8; max-width: 260px; }
+
+.pie-marca p {
+  font-size: 0.84rem; /* Descripción de la marca */
+  color: rgba(255, 255, 255, 0.38); /* Blanco transparente tenue */
+  line-height: 1.8; /* Interlineado cómodo */
+  max-width: 260px; /* Ancho máximo */
+}
 
 .pie-columna h5 {
-  font-family: 'Fraunces', serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 20px;
+  font-family: 'Fraunces', serif; /* Fuente de encabezados de columna */
+  font-size: 1rem; /* Tamaño del título */
+  font-weight: 700; /* Texto en negrita */
+  color: #fff; /* Texto blanco */
+  margin-bottom: 20px; /* Separación con los enlaces */
 }
-.pie-columna ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.pie-columna ul {
+  list-style: none; /* Elimina viñetas predeterminadas */
+  display: flex; /* Disposición vertical en lista */
+  flex-direction: column; /* Apilamiento en columna */
+  gap: 10px; /* Espaciado entre enlaces */
+}
+
 .pie-columna ul a {
-  text-decoration: none;
-  font-size: 0.83rem;
-  color: rgba(255,255,255,0.38);
-  transition: color 0.2s;
+  text-decoration: none; /* Sin subrayado en enlaces */
+  font-size: 0.83rem; /* Tamaño de fuente del enlace */
+  color: rgba(255, 255, 255, 0.38); /* Texto sutil */
+  transition: color 0.2s; /* Transición suave de color al hacer hover */
 }
-.pie-columna ul a:hover { color: var(--dorado-cl); }
+
+.pie-columna ul a:hover {
+  color: var(--dorado-cl); /* Cambia a dorado claro en hover */
+}
 
 .pie-inferior {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 36px;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.25);
-  flex-wrap: wrap;
-  gap: 10px;
+  display: flex; /* Distribución flexible horizontal */
+  justify-content: space-between; /* Distribución a los extremos */
+  align-items: center; /* Centrado vertical */
+  margin-top: 36px; /* Margen superior respecto al divisor */
+  font-size: 0.78rem; /* Tamaño de letra pequeño */
+  color: rgba(255, 255, 255, 0.25); /* Texto secundario translúcido */
+  flex-wrap: wrap; /* Envoltura automática para pantallas reducidas */
+  gap: 10px; /* Espacio mínimo de separación */
 }
-.pie-inferior a { color: var(--dorado); text-decoration: none; }
 
-.wa-flotante {
-  position: fixed;
-  bottom: 28px; right: 28px;
-  width: 56px; height: 56px;
-  background: #25d366;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.5rem;
-  display: flex; align-items: center; justify-content: center;
-  text-decoration: none;
-  z-index: 400;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: transform 0.25s;
+.pie-inferior a {
+  color: var(--dorado); /* Enlaces del pie inferior en dorado */
+  text-decoration: none; /* Sin subrayado */
 }
-.wa-flotante:hover { transform: scale(1.14); }
+
+/* BOTÓN FLOTANTE DE WHATSAPP */
+.wa-flotante {
+  position: fixed; /* Mantiene el botón fijo durante el scroll */
+  bottom: 28px; /* Distancia del borde inferior */
+  right: 28px; /* Distancia del borde derecho */
+  width: 56px; /* Ancho del botón */
+  height: 56px; /* Alto del botón */
+  background: #25d366; /* Verde oficial de WhatsApp */
+  border-radius: 50%; /* Circulo perfecto */
+  color: #fff; /* Icono en blanco */
+  font-size: 1.5rem; /* Tamaño del icono */
+  display: flex; /* Centrado flex */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  text-decoration: none; /* Quita subrayado */
+  z-index: 400; /* Nivel alto de superposición sobre otros elementos */
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); /* Sombra luminosa verde */
+  transition: transform 0.25s; /* Transición suave de escala */
+}
+
+.wa-flotante:hover {
+  transform: scale(1.14); /* Agranda ligeramente el botón en hover */
+}
